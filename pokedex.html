@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-        th, td { border: 1px solid black; padding: 10px; text-align: center; }
-        h1 { text-align: center; font-family: 'Press Start 2P', monospace; margin: 75px; font-size: 48px; color: #FFCC00; letter-spacing: 2px; 
-        text-shadow: -2px -2px 0 #003049, 2px -2px 0 #003049, -2px  2px 0 #003049, 2px 2px 0 #003049, 4px 4px 6px rgba(0,0,0,0.6); }
-        #poke-details { padding: 12px; }
-        #headings { font-family: 'Press Start 2P', monospace; font-size: 18px; }
-        #details { font-family: 'Press Start 2P', monospace; padding: 4px; }
-        tbody tr { font-family: 'Roboto', system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial; font-weight: 500; }
+        body { background-image: url("background.jpg"); 
+            background-repeat: no-repeat; background-size: cover; background-attachment: fixed; padding: 20px;
+        }
+        h1 { text-align: center; margin: 75px; font-size: 48px; color: #FFCC00; letter-spacing: 2px; font-family: 'Press Start 2P', monospace;
+            text-shadow: -2px -2px 0 #003049, 2px -2px 0 #003049, -2px  2px 0 #003049, 2px 2px 0 #003049, 4px 4px 6px rgba(0,0,0,0.6); }
         table { margin: 0 auto; border-collapse: collapse; box-shadow: 0 12px 40px rgba(0,0,0,0.1); margin-bottom: 75px; }
-        body { background: #f5f5f8; padding: 20px;}
+        th, td { border: 1px solid black; padding: 10px; text-align: center; }
+        th { background-color: #4975a4; color: #fffdfd; letter-spacing: 1px; }
+        #poke-details { padding: 12px; }  .details { padding: 4px; }  .headings { font-size: 18px; }
+        .headings, .details { font-family: 'Menio', monospace; }
+        tbody tr { font-family: 'Lato', "Helvetica Neue", Arial, sans-serif; font-weight: 500; }
+        td:nth-child(4), td:nth-child(5), td:nth-child(6), td:nth-child(7), td:nth-child(8), #no-guard, #gigantamax { font-style: italic; }
+        .col-no, .col-image, .col-name { background: #FFF3E0; }
+        .col-type, .col-category { background: #E3F2FD; }
+        .col-abilities { background:#E8F5E9; } .col-weaknesses { background:#FFF59D; } .col-link { background: #F3E5F5; }
         a { color: #003049; text-decoration: none; transition: color .22s ease, background-color .22s ease, transform .12s ease; font-weight: 500; }
         a:hover { font-weight: bold; }
-        td:nth-child(4), td:nth-child(5), td:nth-child(6), td:nth-child(7), td:nth-child(8), #no-guard, #gigantamax { font-style: italic; }
-        th { background-color: rgb(251,251,174); color: #000000; letter-spacing: 1px; }
-        .col-no, .col-image, .col-name { background: #fefae0; }
-        .col-type, .col-category { background: #e9edc9; }
-        .col-abilities, .col-weaknesses, .col-link { background:#e8f0b3; }
         .psychic-type:hover { color: rgb(226, 111, 182)} .bug-type:hover { color: rgb(124, 158, 77)}
         .ghost-type:hover { color:rgb(119, 99, 159)} .dark-type:hover { color: rgb(112, 112, 112);}
         .grass-type:hover { color: rgb(165, 203, 98)} .fire-type:hover { color:rgb(237, 132, 62)}
@@ -31,10 +33,6 @@
         .steel-type:hover { color:rgb(163, 182, 184)} .ice-type:hover { color:rgb(113, 193, 227)}
         .ground-type:hover { color:rgb(249, 223, 54)} .dragon-type:hover { color:rgb(225, 118, 94)}
         footer { text-align: center; margin-top: 100px; font-style: italic; text-shadow: 1px 1px rgb(0, 0, 0); color: white; }
-
-        body { background-image: url("background.jpg"); 
-            background-repeat: no-repeat; background-size: cover; background-attachment: fixed; padding: 20px;
-        }
     </style> 
 </head>
 <body>
@@ -45,13 +43,13 @@
             <col class="col-type"> <col class="col-category"> 
             <col class="col-abilities"> <col class="col-weaknesses"> <col class="col-link">    
         </colgroup>
-        <tr id = "headings">
+        <tr class = "headings">
             <th rowspan="2">POKÉMON NO.</th>
             <th rowspan="2">IMAGE</th>
             <th colspan="5" id = "poke-details">POKÉMON DETAILS</th>
             <th rowspan="2">POKÉDEX LINK</th>
         </tr>
-        <tr id = "details">
+        <tr class = "details">
             <th>NAME</th>
             <th>TYPE</th>
             <th>CATEGORY</th>
@@ -59,416 +57,404 @@
             <th>WEAKNESSES</th>
         </tr>
         <tbody>
-        <tr>
-            <td>0005</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/005.png" alt = "Charmeleon" width = "100" height = "100"></td>
-            <td>Charmeleon</td>
-            <td>Fire</td>
-            <td rowspan = "2">Flame</td>
-            <td rowspan = "2">Blaze</td>
-            <td> <ul> <li>Water</li> <li>Ground</li> <li>Rock</li> </ul>
-            </td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/charmeleon" target = "_blank" class = "fire-type">More <br> About <br> Charmeleon</a></td>
-        </tr>
-        <tr>
-            <td>0006</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/006.png" alt = "Charizard" width = "100" height = "100"></td>
-            <td>Charizard</td>
-            <td>Fire/Flying</td>
-            <td> <ul> <li>Water</li> <li>Electric</li> <li>Rock</li> </ul>
-            </td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/charizard" target = "_blank" class = "fire-type">More <br> About <br> Charizard</a></td>
-        </tr>
-        <tr>
-            <td>0008</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/008.png" alt = "Wartortle" width = "100" height = "100"></td>
-            <td>Wartortle</td>
-            <td rowspan = "2">Water</td>
-            <td>Turtle</td>
-            <td rowspan = "2">Torrent</td>
-            <td rowspan = "2"> <ul> <li>Grass</li> <li>Electric</li> </ul> </td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/wartortle" target = "_blank" class = "water-type">More <br> About <br> Wartortle</a></td>
-        </tr>
-        <tr>
-            <td>0009</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/009.png" alt = "Blastoise" width = "100" height = "100"></td>
-            <td>Blastoise</td>
-            <td>Shellfish</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/blastoise" target = "_blank" class = "water-type">More <br> About <br> Blastoise</a></td>
-        </tr>
-        <tr>
-            <td>0010</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/010.png" alt = "Caterpie" width = "100" height = "100"></td>
-            <td>Caterpie</td>
-            <td rowspan = "2">Bug</td>
-            <td>Worm</td>
-            <td>Shield Dust</td>
-            <td rowspan = "2"> <ul> <li>Fire</li> <li>Flying</li> <li>Rock</li> </ul> </td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/caterpie" target = "_blank" class = "bug-type">More <br> About <br> Caterpie</a></td>
-        </tr>
-        <tr>
-            <td>0011</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/011.png" alt = "Metapod" width = "100" height = "100"></td>
-            <td>Metapod</td>
-            <td rowspan = "2">Cocoon</td>
-            <td rowspan = "2">Shed Skin</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/metapod" target = "_blank" class = "bug-type">More <br> About <br> Metapod</a></td>
-        </tr>
-        <tr>
-            <td>0014</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/014.png" alt = "Kakuna" width = "100" height = "100"></td>
-            <td>Kakuna</td>
-            <td rowspan = "2">Bug/Poison</td>
-            <td rowspan = "2"> <ul> <li>Fire</li> <li>Flying</li> <li>Psychic</li>
-                <li>Rock</li> </ul> </td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/kakuna" target = "_blank" class = "bug-type">More <br> About <br> Kakuna</a></td>
-        </tr>
-        <tr>
-        <td>0015</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/015.png" alt = "Beedrill" width = "100" height = "100"></td>
-            <td>Beedrill</td>
-            <td>Poison Bee</td>
-            <td>Swarm</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/beedrill" target = "_blank" class = "bug-type">More <br> About <br> Beedrill</a></td>
-        </tr>
-        <tr>
-            <td>0016</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/016.png" alt = "Pidgey" width = "100" height = "100"></td>
-            <td>Pidgey</td>
-            <td rowspan = "6">Normal/Flying</td>
-            <td>Tiny Bird</td>
-            <td rowspan = "3">Keen Eye <br> Tangled Feet</td>
-            <td rowspan = "6"> <ul> <li>Electric</li> <li>Ice</li> <li>Rock</li> </ul> </td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/pidgey" target = "_blank" class = "flying-type">More <br> About <br> Pidgey</a></td>
-        </tr>
-        <tr>
-            <td>0017</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/017.png" alt = "Pidgeotto" width = "100" height = "100"></td>
-            <td>Pidgeotto</td>
-            <td rowspan = "3">Bird</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/pidgeotto" target = "_blank" class = "flying-type">More <br> About <br> Pidgeotto</a></td>
-        </tr>
-        <tr>
-            <td rowspan = "2">0018</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/018.png" alt = "Pidgeot" width = "100" height = "100"></td>
-            <td>Pidgeot</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/pidgeot" target = "_blank" class = "flying-type">More <br> About <br> Pidgeot</a></td>
-        </tr>
-        <tr>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/018_f2.png" alt = "Mega Pidgeot" width = "100" height = "100"></td>
-            <td>Mega Pidgeot</td>
-            <td id = "no-guard">No Guard</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/pidgeot" target = "_blank" class = "normal-type">More <br> About <br> Mega Pidgeot</a></td>
-        </tr>
-        <tr>
-            <td>0021</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/021.png" alt = "Spearow" width = "100" height = "100"></td>
-            <td>Spearow</td>
-            <td>Tiny Bird</td>
-            <td rowspan = "2">Keen Eye</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/spearow" target = "_blank" class = "normal-type">More <br> About <br> Spearow</a></td>
-        </tr>
-        <tr>
-            <td>0022</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/022.png" alt = "Fearow" width = "100" height = "100"></td>
-            <td>Fearow</td>
-            <td>Beak</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/fearow" target = "_blank" class = "normal-type">More <br> About <br> Fearow</a></td>
-        </tr>
-        <tr>
-            <td>0023</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/023.png" alt = "Ekans" width = "100" height = "100"></td>
-            <td>Ekans</td>
-            <td rowspan = "6">Poison</td>
-            <td>Snake</td>
-            <td rowspan = "2">Shed Skin <br> Intimidate</td>
-            <td rowspan = "6"> <ul> <li>Ground</li> <li>Psychic</li> </ul> </td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/ekans" target = "_blank" class = "poison-type">More <br> About <br> Ekans</a></td>
-        </tr>
-        <tr>
-            <td>0024</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/024.png" alt = "Arbok" width = "100" height = "100"></td>
-            <td>Arbok</td>
-            <td>Cobra</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/arbok" target = "_blank" class = "poison-type">More <br> About <br> Arbok</a></td>
-        </tr>
-        <tr>
-            <td>0029</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/029.png" alt = "Nidoran (Female)" width = "100" height = "100"></td>
-            <td>Nidoran (Female)</td>
-            <td rowspan = "4">Poison Pin</td>
-            <td rowspan = "4">Rivalry <br> Poison Point </td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/nidoran-female" target = "_blank" class = "poison-type">More <br> About <br> Nidoran</a></td>
-        </tr>
-        <tr>
-            <td>0030</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/030.png" alt = "Nidorina" width = "100" height = "100"></td>
-            <td>Nidorina</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/nidorina" target = "_blank" class = "poison-type">More <br> About <br> Nidorina</a></td>
-        </tr>
-        <tr>
-            <td>0032</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/032.png" alt = "Nidoran (Male)" width = "100" height = "100"></td>
-            <td>Nidoran (Male)</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/nidoran-male" target = "_blank" class = "poison-type">More <br> About <br> Nidoran</a></td>
-        </tr>
-        <tr>
-            <td>0033</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/033.png" alt = "Nidorino" width = "100" height = "100"></td>
-            <td>Nidorino</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/nidoran-male" target = "_blank" class = "poison-type">More <br> About <br> Nidorino</a></td>
-        </tr>
-        <tr>
-            <td>0035</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/035.png" alt = "Clefairy" width = "100" height = "100"></td>
-            <td>Clefairy</td>
-            <td colspan = "2">Fairy</td>
-            <td>Cute Charm <br> Magic Guard </td>
-            <td><ul> <li>Poison</li> <li>Steel</li> </ul></td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/clefairy" target = "_blank" class = "fairy-type">More <br> About <br> Clefairy</a></td>
-        </tr>
-        <tr>
-            <td>0037</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/037.png" alt = "Vulpix" width = "100" height = "100"></td>
-            <td>Vulpix</td>
-            <td rowspan = "2">Fire</td>
-            <td rowspan = "2">Fox</td>
-            <td rowspan = "2">Flash Fire</td>
-            <td rowspan = "2"> <ul> <li>Water</li> <li>Ground</li> <li>Rock</li> </ul> </td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/vulpix" target = "_blank" class = "fire-type">More <br> About <br> Vulpix</a></td>
-        </tr>
-        <tr>
-            <td>0038</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/038.png" alt = "Ninetales" width = "100" height = "100"></td>
-            <td>Ninetales</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/ninetales" target = "_blank" class = "fire-type">More <br> About <br> Ninetales</a></td>
-        </tr>
-        <tr>
-            <td>0043</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/043.png" alt = "Oddish" width = "100" height = "100"></td>
-            <td>Oddish</td>
-            <td rowspan = "3">Grass/Poison</td>
-            <td rowspan = "2">Weed</td>
-            <td rowspan = "3">Chlorophyll</td>
-            <td rowspan = "3"> <ul> <li>Fire</li> <li>Ice</li> <li>Flying</li> 
-                <li>Psychic</li> </ul> </td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/oddish" target = "_blank" class = "grass-type">More <br> About <br> Oddish</a></td>
-        </tr>
-        <tr>
-            <td>0044</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/044.png" alt = "Gloom" width = "100" height = "100"></td>
-            <td>Gloom</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/gloom" target = "_blank" class = "grass-type">More <br> About <br> Gloom</a></td>
-        </tr>
-        <tr>
-            <td>0045</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/045.png" alt = "Vileplume" width = "100" height = "100"></td>
-            <td>Vileplume</td>
-            <td>Flower</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/vileplume" target = "_blank" class = "grass-type">More <br> About <br> Vileplume</a></td>
-        </tr>
-        <tr>
-            <td>0046</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/046.png" alt = "Paras" width = "100" height = "100"></td>
-            <td>Paras</td>
-            <td rowspan = "2">Bug/Grass</td>
-            <td rowspan = "2">Mushroom</td>
-            <td rowspan = "2">Effect Spore <br> Dry Skin</td>
-            <td rowspan = "2">
-                <ul> <li>Fire</li> <li>Ice</li> <li>Poison</li> <li>Flying</li> <li> Bug 
-                </li> <li>Rock</li> </ul>
-            </td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/paras" target = "_blank" class = "grass-type">More <br> About <br> Paras</a></td>
-        </tr>
-        <tr>
-            <td>0047</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/047.png" alt = "Parasect" width = "100" height = "100"></td>
-            <td>Parasect</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/parasect" target = "_blank" class = "grass-type">More <br> About <br> Parasect</a></td>
-        </tr>
-        <tr>
-            <td>0056</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/056.png" alt = "Mankey" width = "100" height = "100"></td>
-            <td>Mankey</td>
-            <td rowspan = "6">Fighting</td>
-            <td rowspan = "2">Pig Monkey</td>
-            <td rowspan = "2">Vital Spirit <br> Anger Point</td>
-            <td rowspan = "6"> <ul> <li>Flying</li> <li>Psychic</li> <li>Fairy</li> </ul>
-            </td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/mankey" target = "_blank" class = "fighting-type">More <br> About <br> Mankey</a></td>
-        </tr>
-        <tr>
-            <td>0057</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/057.png" alt = "Primeape" width = "100" height = "100"></td>
-            <td>Primeape</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/primeape" target = "_blank" class = "fighting-type">More <br> About <br> Primeape</a></td>
-        </tr>
-        <tr>
-            <td>0066</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/066.png" alt = "Machop" width = "100" height = "100"></td>
-            <td>Machop</td>
-            <td rowspan = "4">Superpower</td>
-            <td rowspan = "4">Guts <br> No Guard</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/machop" target = "_blank" class = "fighting-type">More <br> About <br> Machop</a></td>
-        </tr>
-        <tr>
-            <td>0067</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/067.png" alt = "Machoke" width = "100" height = "100"></td>
-            <td>Machoke</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/machoke" target = "_blank" class = "fighting-type">More <br> About <br> Machoke</a></td>
-        </tr>
-        <tr>
-            <td rowspan = "2">0068</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/068.png" alt = "Machamp" width = "100" height = "100"></td>
-            <td>Machamp</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/machamp" target = "_blank" class = "fighting-type">More <br> About <br> Machamp</a></td>
-        </tr>
-        <tr>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/068_f2.png" alt = "Gigantamax Machamp" width = "100" height = "100"></td>
-            <td>Gigantamax Machamp</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/machamp" target = "_blank" class = "fighting-type" id = "gigantamax">More <br> About <br> Gigantamax Machamp</a></td>
-        </tr>
-        <tr>
-            <td>0081</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/081.png" alt = "Magnemite" width = "100" height = "100"></td>
-            <td>Magnemite</td>
-            <td rowspan = "2">Electric/Steel</td>
-            <td rowspan = "2">Magnet</td>
-            <td rowspan = "2">Sturdy <br> Magnet Pull</td>
-            <td rowspan = "2"> <ul> <li>Fire</li> <li>Fighting</li> <li>Ground</li> </ul>
-            </td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/magnemite" target = "_blank" class = "electric-type">More <br> About <br> Magnemite</a></td>
-        </tr>
-        <tr>
-            <td>0082</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/082.png" alt = "Magneton" width = "100" height = "100"></td>
-            <td>Magneton</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/magneton" target = "_blank" class = "steel-type">More <br> About <br> Magneton</a></td>
-        </tr>
-        <tr>
-            <td>0087</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/087.png" alt = "Dewgong" width = "100" height = "100"></td>
-            <td>Dewgong</td>
-            <td rowspan = "2">Water/Ice</td>
-            <td>Sea Lion</td>
-            <td>Thick Fat <br> Hydration</td>
-            <td rowspan = "2"> <ul> <li>Grass</li> <li>Electric</li> <li>Fighting</li>
-            <li>Rock</li> </ul> </td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/dewgong" target = "_blank" class = "ice-type">More <br> About <br> Dewgong</a></td>
-        </tr>
-        <tr>
-            <td>0091</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/091.png" alt = "Cloyster" width = "100" height = "100"></td>
-            <td>Cloyster</td>
-            <td>Bivalve</td>
-            <td>Shell Armor <br> Skill Link</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/cloyster" target = "_blank" class = "ice-type">More <br> About <br> Cloyster</a></td>
-        </tr>
-        <tr>
-            <td>0093</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/093.png" alt = "Haunter" width = "100" height = "100"></td>
-            <td>Haunter</td>
-            <td rowspan = "2">Ghost/Poison</td>
-            <td>Gas</td>
-            <td>Levitate</td>
-            <td rowspan = "2"> <ul> <li>Ground</li> <li>Psychic</li> <li>Ghost</li>
-            <li>Dark</li> </ul> </td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/haunter" target = "_blank" class = "ghost-type">More <br> About <br> Haunter</a></td>
-        </tr>
-        <tr>
-            <td>0094</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/094.png" alt = "Gengar" width = "100" height = "100"></td>
-            <td>Gengar</td>
-            <td>Shadow</td>
-            <td>Cursed Body</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/gengar" target = "_blank" class = "ghost-type">More <br> About <br> Gengar</a></td>
-        </tr>
-        <tr>
-            <td>0096</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/096.png" alt = "Drowzee" width = "100" height = "100"></td>
-            <td>Drowzee</td>
-            <td rowspan = "2">Psychic</td>
-            <td rowspan = "2">Hypnosis</td>
-            <td rowspan = "2">Insomnia <br> Forewarn</td>
-            <td rowspan = "2"> <ul> <li>Bug</li> <li>Ghost</li> <li>Dark</li> </ul> </td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/drowzee" target = "_blank" class = "psychic-type">More <br> About <br> Drowzee</a></td>
-        </tr>
-        <tr>
-            <td>0097</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/097.png" alt = "Hypno" width = "100" height = "100"></td>
-            <td>Hypno</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/hypno" target = "_blank" class = "psychic-type">More <br> About <br> Hypno</a></td>
-        </tr>
-        <tr>
-            <td>0104</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/104.png" alt = "Cubone" width = "100" height = "100"></td>
-            <td>Cubone</td>
-            <td rowspan = "2">Ground</td>
-            <td>Lonely</td>
-            <td rowspan = "4">Lightning Rod <br> Rock Head</td>
-            <td rowspan = "2"> <ul> <li>Water</li> <li>Grass</li> <li>Ice</li> </ul> </td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/cubone" target = "_blank" class = "ground-type">More <br> About <br> Cubone</a></td>
-        </tr>
-        <tr>
-            <td>0105</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/105.png" alt = "Marowak" width = "100" height = "100"></td>
-            <td>Marowak</td>
-            <td>Bone Keeper</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/marowak" target = "_blank" class = "ground-type">More <br> About <br> Marowak</a></td>
-        </tr>
-        <tr>
-            <td>0111</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/111.png" alt = "Rhyhorn" width = "100" height = "100"></td>
-            <td>Rhyhorn</td>
-            <td rowspan = "2">Ground/Rock</td>
-            <td>Spikes</td>
-            <td rowspan = "2"> <ul> <li>Water</li> <li>Grass</li> <li>Ice</li> <li>Fighting</li> <li>Ground</li> <li>Steel</li> </ul> </td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/rhyhorn" target = "_blank" class = "rock-type">More <br> About <br> Rhyhorn</a></td>
-        </tr>
-        <tr>
-            <td>0112</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/112.png" alt = "Rhydon" width = "100" height = "100"></td>
-            <td>Rhydon</td>
-            <td>Drill</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/rhydon" target = "_blank" class = "rock-type">More <br> About <br> Rhydon</a></td>
-        </tr>
-        <tr>
-            <td>0147</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/147.png" alt = "Dratini" width = "100" height = "100"></td>
-            <td>Dratini</td>
-            <td rowspan = "2" colspan = "2">Dragon</td>
-            <td rowspan = "2">Shed Skin</td>
-            <td rowspan = "2"> <ul> <li>Ice</li> <li>Dragon</li> <li>Fairy</li> </ul> </td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/dratini" target = "_blank" class = "dragon-type">More <br> About <br> Dratini</a></td>
-        </tr>
-        <tr>
-            <td>0148</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/148.png" alt = "Dragonair" width = "100" height = "100"></td>
-            <td>Dragonair</td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/dragonair" target = "_blank" class = "dragon-type">More <br> About <br> Dragonair</a></td>
-        </tr>
-        <tr>
-            <td>0197</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/197.png" alt = "Umbreon" width = "100" height = "100"></td>
-            <td>Umbreon</td>
-            <td>Dark</td>
-            <td>Moonlight</td>
-            <td>Synchronize</td>
-            <td> <ul> <li>Fighting</li> <li>Bug</li> <li>Fairy</li> </ul> 
-            </td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/umbreon" target = "_blank" class = "dark-type">More <br> About <br> Umbreon</a></td>
-        </tr>
-        <tr>
-            <td>0198</td>
-            <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/198.png" alt = "Murkrow" width = "100" height = "100"></td>
-            <td>Murkrow</td>
-            <td>Dark/Flying</td>
-            <td>Darkness</td>
-            <td>Super Luck <br> Insomnia</td>
-            <td> <ul> <li>Electric</li> <li>Ice</li> <li>Rock</li> <li>Fairy</li> </ul> 
-            </td>
-            <td><a href = "https://www.pokemon.com/us/pokedex/murkrow" target = "_blank" class = "dark-type">More <br> About <br> Murkrow</a></td>
-        </tr>
+            <tr>
+                <td>0005</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/005.png" alt = "Charmeleon" width = "100" height = "100"></td>
+                <td>Charmeleon</td>
+                <td>Fire</td>
+                <td rowspan = "2">Flame</td>
+                <td rowspan = "2">Blaze</td>
+                <td> <ul> <li>Water</li> <li>Ground</li> <li>Rock</li> </ul> </td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/charmeleon" target = "_blank" class = "fire-type">More <br> About <br> Charmeleon</a></td>
+            </tr>
+            <tr>
+                <td>0006</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/006.png" alt = "Charizard" width = "100" height = "100"></td>
+                <td>Charizard</td>
+                <td>Fire/Flying</td>
+                <td> <ul> <li>Water</li> <li>Electric</li> <li>Rock</li> </ul> </td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/charizard" target = "_blank" class = "fire-type">More <br> About <br> Charizard</a></td>
+            </tr>
+            <tr>
+                <td>0008</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/008.png" alt = "Wartortle" width = "100" height = "100"></td>
+                <td>Wartortle</td>
+                <td rowspan = "2">Water</td>
+                <td>Turtle</td>
+                <td rowspan = "2">Torrent</td>
+                <td rowspan = "2"> <ul> <li>Grass</li> <li>Electric</li> </ul> </td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/wartortle" target = "_blank" class = "water-type">More <br> About <br> Wartortle</a></td>
+            </tr>
+            <tr>
+                <td>0009</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/009.png" alt = "Blastoise" width = "100" height = "100"></td>
+                <td>Blastoise</td>
+                <td>Shellfish</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/blastoise" target = "_blank" class = "water-type">More <br> About <br> Blastoise</a></td>
+            </tr>
+            <tr>
+                <td>0010</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/010.png" alt = "Caterpie" width = "100" height = "100"></td>
+                <td>Caterpie</td>
+                <td rowspan = "2">Bug</td>
+                <td>Worm</td>
+                <td>Shield Dust</td>
+                <td rowspan = "2"> <ul> <li>Fire</li> <li>Flying</li> <li>Rock</li> </ul> </td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/caterpie" target = "_blank" class = "bug-type">More <br> About <br> Caterpie</a></td>
+            </tr>
+            <tr>
+                <td>0011</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/011.png" alt = "Metapod" width = "100" height = "100"></td>
+                <td>Metapod</td>
+                <td rowspan = "2">Cocoon</td>
+                <td rowspan = "2">Shed Skin</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/metapod" target = "_blank" class = "bug-type">More <br> About <br> Metapod</a></td>
+            </tr>
+            <tr>
+                <td>0014</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/014.png" alt = "Kakuna" width = "100" height = "100"></td>
+                <td>Kakuna</td>
+                <td rowspan = "2">Bug/Poison</td>
+                <td rowspan = "2"> <ul> <li>Fire</li> <li>Flying</li> <li>Psychic</li> <li>Rock</li> </ul> </td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/kakuna" target = "_blank" class = "bug-type">More <br> About <br> Kakuna</a></td>
+            </tr>
+            <tr>
+            <td>0015</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/015.png" alt = "Beedrill" width = "100" height = "100"></td>
+                <td>Beedrill</td>
+                <td>Poison Bee</td>
+                <td>Swarm</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/beedrill" target = "_blank" class = "bug-type">More <br> About <br> Beedrill</a></td>
+            </tr>
+            <tr>
+                <td>0016</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/016.png" alt = "Pidgey" width = "100" height = "100"></td>
+                <td>Pidgey</td>
+                <td rowspan = "6">Normal/Flying</td>
+                <td>Tiny Bird</td>
+                <td rowspan = "3">Keen Eye <br> Tangled Feet</td>
+                <td rowspan = "6"> <ul> <li>Electric</li> <li>Ice</li> <li>Rock</li> </ul> </td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/pidgey" target = "_blank" class = "flying-type">More <br> About <br> Pidgey</a></td>
+            </tr>
+            <tr>
+                <td>0017</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/017.png" alt = "Pidgeotto" width = "100" height = "100"></td>
+                <td>Pidgeotto</td>
+                <td rowspan = "3">Bird</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/pidgeotto" target = "_blank" class = "flying-type">More <br> About <br> Pidgeotto</a></td>
+            </tr>
+            <tr>
+                <td rowspan = "2">0018</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/018.png" alt = "Pidgeot" width = "100" height = "100"></td>
+                <td>Pidgeot</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/pidgeot" target = "_blank" class = "flying-type">More <br> About <br> Pidgeot</a></td>
+            </tr>
+            <tr>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/018_f2.png" alt = "Mega Pidgeot" width = "100" height = "100"></td>
+                <td>Mega Pidgeot</td>
+                <td id = "no-guard">No Guard</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/pidgeot" target = "_blank" class = "normal-type">More <br> About <br> Mega Pidgeot</a></td>
+            </tr>
+            <tr>
+                <td>0021</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/021.png" alt = "Spearow" width = "100" height = "100"></td>
+                <td>Spearow</td>
+                <td>Tiny Bird</td>
+                <td rowspan = "2">Keen Eye</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/spearow" target = "_blank" class = "normal-type">More <br> About <br> Spearow</a></td>
+            </tr>
+            <tr>
+                <td>0022</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/022.png" alt = "Fearow" width = "100" height = "100"></td>
+                <td>Fearow</td>
+                <td>Beak</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/fearow" target = "_blank" class = "normal-type">More <br> About <br> Fearow</a></td>
+            </tr>
+            <tr>
+                <td>0023</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/023.png" alt = "Ekans" width = "100" height = "100"></td>
+                <td>Ekans</td>
+                <td rowspan = "6">Poison</td>
+                <td>Snake</td>
+                <td rowspan = "2">Shed Skin <br> Intimidate</td>
+                <td rowspan = "6"> <ul> <li>Ground</li> <li>Psychic</li> </ul> </td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/ekans" target = "_blank" class = "poison-type">More <br> About <br> Ekans</a></td>
+            </tr>
+            <tr>
+                <td>0024</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/024.png" alt = "Arbok" width = "100" height = "100"></td>
+                <td>Arbok</td>
+                <td>Cobra</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/arbok" target = "_blank" class = "poison-type">More <br> About <br> Arbok</a></td>
+            </tr>
+            <tr>
+                <td>0029</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/029.png" alt = "Nidoran (Female)" width = "100" height = "100"></td>
+                <td>Nidoran (Female)</td>
+                <td rowspan = "4">Poison Pin</td>
+                <td rowspan = "4">Rivalry <br> Poison Point </td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/nidoran-female" target = "_blank" class = "poison-type">More <br> About <br> Nidoran</a></td>
+            </tr>
+            <tr>
+                <td>0030</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/030.png" alt = "Nidorina" width = "100" height = "100"></td>
+                <td>Nidorina</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/nidorina" target = "_blank" class = "poison-type">More <br> About <br> Nidorina</a></td>
+            </tr>
+            <tr>
+                <td>0032</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/032.png" alt = "Nidoran (Male)" width = "100" height = "100"></td>
+                <td>Nidoran (Male)</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/nidoran-male" target = "_blank" class = "poison-type">More <br> About <br> Nidoran</a></td>
+            </tr>
+            <tr>
+                <td>0033</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/033.png" alt = "Nidorino" width = "100" height = "100"></td>
+                <td>Nidorino</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/nidoran-male" target = "_blank" class = "poison-type">More <br> About <br> Nidorino</a></td>
+            </tr>
+            <tr>
+                <td>0035</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/035.png" alt = "Clefairy" width = "100" height = "100"></td>
+                <td>Clefairy</td>
+                <td colspan = "2">Fairy</td>
+                <td>Cute Charm <br> Magic Guard </td>
+                <td><ul> <li>Poison</li> <li>Steel</li> </ul></td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/clefairy" target = "_blank" class = "fairy-type">More <br> About <br> Clefairy</a></td>
+            </tr>
+            <tr>
+                <td>0037</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/037.png" alt = "Vulpix" width = "100" height = "100"></td>
+                <td>Vulpix</td>
+                <td rowspan = "2">Fire</td>
+                <td rowspan = "2">Fox</td>
+                <td rowspan = "2">Flash Fire</td>
+                <td rowspan = "2"> <ul> <li>Water</li> <li>Ground</li> <li>Rock</li> </ul> </td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/vulpix" target = "_blank" class = "fire-type">More <br> About <br> Vulpix</a></td>
+            </tr>
+            <tr>
+                <td>0038</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/038.png" alt = "Ninetales" width = "100" height = "100"></td>
+                <td>Ninetales</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/ninetales" target = "_blank" class = "fire-type">More <br> About <br> Ninetales</a></td>
+            </tr>
+            <tr>
+                <td>0043</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/043.png" alt = "Oddish" width = "100" height = "100"></td>
+                <td>Oddish</td>
+                <td rowspan = "3">Grass/Poison</td>
+                <td rowspan = "2">Weed</td>
+                <td rowspan = "3">Chlorophyll</td>
+                <td rowspan = "3"> <ul> <li>Fire</li> <li>Ice</li> <li>Flying</li> <li>Psychic</li> </ul> </td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/oddish" target = "_blank" class = "grass-type">More <br> About <br> Oddish</a></td>
+            </tr>
+            <tr>
+                <td>0044</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/044.png" alt = "Gloom" width = "100" height = "100"></td>
+                <td>Gloom</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/gloom" target = "_blank" class = "grass-type">More <br> About <br> Gloom</a></td>
+            </tr>
+            <tr>
+                <td>0045</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/045.png" alt = "Vileplume" width = "100" height = "100"></td>
+                <td>Vileplume</td>
+                <td>Flower</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/vileplume" target = "_blank" class = "grass-type">More <br> About <br> Vileplume</a></td>
+            </tr>
+            <tr>
+                <td>0046</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/046.png" alt = "Paras" width = "100" height = "100"></td>
+                <td>Paras</td>
+                <td rowspan = "2">Bug/Grass</td>
+                <td rowspan = "2">Mushroom</td>
+                <td rowspan = "2">Effect Spore <br> Dry Skin</td>
+                <td rowspan = "2">
+                    <ul> <li>Fire</li> <li>Ice</li> <li>Poison</li> <li>Flying</li> <li> Bug </li> <li>Rock</li> </ul> </td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/paras" target = "_blank" class = "grass-type">More <br> About <br> Paras</a></td>
+            </tr>
+            <tr>
+                <td>0047</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/047.png" alt = "Parasect" width = "100" height = "100"></td>
+                <td>Parasect</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/parasect" target = "_blank" class = "grass-type">More <br> About <br> Parasect</a></td>
+            </tr>
+            <tr>
+                <td>0056</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/056.png" alt = "Mankey" width = "100" height = "100"></td>
+                <td>Mankey</td>
+                <td rowspan = "6">Fighting</td>
+                <td rowspan = "2">Pig Monkey</td>
+                <td rowspan = "2">Vital Spirit <br> Anger Point</td>
+                <td rowspan = "6"> <ul> <li>Flying</li> <li>Psychic</li> <li>Fairy</li> </ul> </td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/mankey" target = "_blank" class = "fighting-type">More <br> About <br> Mankey</a></td>
+            </tr>
+            <tr>
+                <td>0057</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/057.png" alt = "Primeape" width = "100" height = "100"></td>
+                <td>Primeape</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/primeape" target = "_blank" class = "fighting-type">More <br> About <br> Primeape</a></td>
+            </tr>
+            <tr>
+                <td>0066</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/066.png" alt = "Machop" width = "100" height = "100"></td>
+                <td>Machop</td>
+                <td rowspan = "4">Superpower</td>
+                <td rowspan = "4">Guts <br> No Guard</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/machop" target = "_blank" class = "fighting-type">More <br> About <br> Machop</a></td>
+            </tr>
+            <tr>
+                <td>0067</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/067.png" alt = "Machoke" width = "100" height = "100"></td>
+                <td>Machoke</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/machoke" target = "_blank" class = "fighting-type">More <br> About <br> Machoke</a></td>
+            </tr>
+            <tr>
+                <td rowspan = "2">0068</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/068.png" alt = "Machamp" width = "100" height = "100"></td>
+                <td>Machamp</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/machamp" target = "_blank" class = "fighting-type">More <br> About <br> Machamp</a></td>
+            </tr>
+            <tr>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/068_f2.png" alt = "Gigantamax Machamp" width = "100" height = "100"></td>
+                <td>Gigantamax Machamp</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/machamp" target = "_blank" class = "fighting-type" id = "gigantamax">More <br> About <br> Gigantamax Machamp</a></td>
+            </tr>
+            <tr>
+                <td>0081</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/081.png" alt = "Magnemite" width = "100" height = "100"></td>
+                <td>Magnemite</td>
+                <td rowspan = "2">Electric/Steel</td>
+                <td rowspan = "2">Magnet</td>
+                <td rowspan = "2">Sturdy <br> Magnet Pull</td>
+                <td rowspan = "2"> <ul> <li>Fire</li> <li>Fighting</li> <li>Ground</li> </ul> </td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/magnemite" target = "_blank" class = "electric-type">More <br> About <br> Magnemite</a></td>
+            </tr>
+            <tr>
+                <td>0082</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/082.png" alt = "Magneton" width = "100" height = "100"></td>
+                <td>Magneton</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/magneton" target = "_blank" class = "steel-type">More <br> About <br> Magneton</a></td>
+            </tr>
+            <tr>
+                <td>0087</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/087.png" alt = "Dewgong" width = "100" height = "100"></td>
+                <td>Dewgong</td>
+                <td rowspan = "2">Water/Ice</td>
+                <td>Sea Lion</td>
+                <td>Thick Fat <br> Hydration</td>
+                <td rowspan = "2"> <ul> <li>Grass</li> <li>Electric</li> <li>Fighting</li> <li>Rock</li> </ul> </td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/dewgong" target = "_blank" class = "ice-type">More <br> About <br> Dewgong</a></td>
+            </tr>
+            <tr>
+                <td>0091</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/091.png" alt = "Cloyster" width = "100" height = "100"></td>
+                <td>Cloyster</td>
+                <td>Bivalve</td>
+                <td>Shell Armor <br> Skill Link</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/cloyster" target = "_blank" class = "ice-type">More <br> About <br> Cloyster</a></td>
+            </tr>
+            <tr>
+                <td>0093</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/093.png" alt = "Haunter" width = "100" height = "100"></td>
+                <td>Haunter</td>
+                <td rowspan = "2">Ghost/Poison</td>
+                <td>Gas</td>
+                <td>Levitate</td>
+                <td rowspan = "2"> <ul> <li>Ground</li> <li>Psychic</li> <li>Ghost</li> <li>Dark</li> </ul> </td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/haunter" target = "_blank" class = "ghost-type">More <br> About <br> Haunter</a></td>
+            </tr>
+            <tr>
+                <td>0094</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/094.png" alt = "Gengar" width = "100" height = "100"></td>
+                <td>Gengar</td>
+                <td>Shadow</td>
+                <td>Cursed Body</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/gengar" target = "_blank" class = "ghost-type">More <br> About <br> Gengar</a></td>
+            </tr>
+            <tr>
+                <td>0096</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/096.png" alt = "Drowzee" width = "100" height = "100"></td>
+                <td>Drowzee</td>
+                <td rowspan = "2">Psychic</td>
+                <td rowspan = "2">Hypnosis</td>
+                <td rowspan = "2">Insomnia <br> Forewarn</td>
+                <td rowspan = "2"> <ul> <li>Bug</li> <li>Ghost</li> <li>Dark</li> </ul> </td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/drowzee" target = "_blank" class = "psychic-type">More <br> About <br> Drowzee</a></td>
+            </tr>
+            <tr>
+                <td>0097</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/097.png" alt = "Hypno" width = "100" height = "100"></td>
+                <td>Hypno</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/hypno" target = "_blank" class = "psychic-type">More <br> About <br> Hypno</a></td>
+            </tr>
+            <tr>
+                <td>0104</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/104.png" alt = "Cubone" width = "100" height = "100"></td>
+                <td>Cubone</td>
+                <td rowspan = "2">Ground</td>
+                <td>Lonely</td>
+                <td rowspan = "4">Lightning Rod <br> Rock Head</td>
+                <td rowspan = "2"> <ul> <li>Water</li> <li>Grass</li> <li>Ice</li> </ul> </td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/cubone" target = "_blank" class = "ground-type">More <br> About <br> Cubone</a></td>
+            </tr>
+            <tr>
+                <td>0105</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/105.png" alt = "Marowak" width = "100" height = "100"></td>
+                <td>Marowak</td>
+                <td>Bone Keeper</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/marowak" target = "_blank" class = "ground-type">More <br> About <br> Marowak</a></td>
+            </tr>
+            <tr>
+                <td>0111</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/111.png" alt = "Rhyhorn" width = "100" height = "100"></td>
+                <td>Rhyhorn</td>
+                <td rowspan = "2">Ground/Rock</td>
+                <td>Spikes</td>
+                <td rowspan = "2"> <ul> <li>Water</li> <li>Grass</li> <li>Ice</li> <li>Fighting</li> <li>Ground</li> <li>Steel</li> </ul> </td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/rhyhorn" target = "_blank" class = "rock-type">More <br> About <br> Rhyhorn</a></td>
+            </tr>
+            <tr>
+                <td>0112</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/112.png" alt = "Rhydon" width = "100" height = "100"></td>
+                <td>Rhydon</td>
+                <td>Drill</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/rhydon" target = "_blank" class = "rock-type">More <br> About <br> Rhydon</a></td>
+            </tr>
+            <tr>
+                <td>0147</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/147.png" alt = "Dratini" width = "100" height = "100"></td>
+                <td>Dratini</td>
+                <td rowspan = "2" colspan = "2">Dragon</td>
+                <td rowspan = "2">Shed Skin</td>
+                <td rowspan = "2"> <ul> <li>Ice</li> <li>Dragon</li> <li>Fairy</li> </ul> </td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/dratini" target = "_blank" class = "dragon-type">More <br> About <br> Dratini</a></td>
+            </tr>
+            <tr>
+                <td>0148</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/148.png" alt = "Dragonair" width = "100" height = "100"></td>
+                <td>Dragonair</td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/dragonair" target = "_blank" class = "dragon-type">More <br> About <br> Dragonair</a></td>
+            </tr>
+            <tr>
+                <td>0197</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/197.png" alt = "Umbreon" width = "100" height = "100"></td>
+                <td>Umbreon</td>
+                <td>Dark</td>
+                <td>Moonlight</td>
+                <td>Synchronize</td>
+                <td> <ul> <li>Fighting</li> <li>Bug</li> <li>Fairy</li> </ul> </td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/umbreon" target = "_blank" class = "dark-type">More <br> About <br> Umbreon</a></td>
+            </tr>
+            <tr>
+                <td>0198</td>
+                <td><img src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/198.png" alt = "Murkrow" width = "100" height = "100"></td>
+                <td>Murkrow</td>
+                <td>Dark/Flying</td>
+                <td>Darkness</td>
+                <td>Super Luck <br> Insomnia</td>
+                <td> <ul> <li>Electric</li> <li>Ice</li> <li>Rock</li> <li>Fairy</li> </ul> </td>
+                <td><a href = "https://www.pokemon.com/us/pokedex/murkrow" target = "_blank" class = "dark-type">More <br> About <br> Murkrow</a></td>
+            </tr>
         </tbody>
     </table>
     <footer>Created by: Leo Angelo Larre Agpoon | 3042 BCS212L-OCa Web Development 1</footer>
